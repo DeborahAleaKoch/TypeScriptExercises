@@ -7,6 +7,7 @@ console.log(dogName);
 dogName = "elf";
 
 let value = 11;
+console.log(value);
 
 let seventeen = 17;
 const sum = seventeen + 44;
