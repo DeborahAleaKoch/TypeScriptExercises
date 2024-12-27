@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<script type="module" src="./script.ts" defer></script>
+		<title>Trinkgeldrechner</title>
+	</head>
+	<body class="">
+		<header class="h-1/2"></header>
+		<main class="h-screen flex justify-center items-center">
+			<div
+				class="flex flex-col border border-pink-500 rounded-lg p-6 gap-4"
+			>
+				<h1 class="text-2xl text-center">Trinkgeldrechner</h1>
+
+				<label for="invoice">Wie hoch war die Rechnug?</label>
+				<input type="number" name="" id="invoice" class="p-1 bg-gray-100" required/>
+				<label for="numberOfPeople"
+					>Wie viele Menschen teilen sich die Rechnung?</label
+				>
+				<input type="number" id="numberOfPeople" class="p-1 bg-gray-100" required/>
+				<select name="" id="service" class="p-2 bg-gray-100" required>
+					<option disabled selected value="">Wie war der Service?</option>
+					<option value="1.02">Schlechter Service</option>
+					<option value="1.1">Mittlerer Service</option>
+					<option value="1.2">Super Service</option>
+				</select>
+				<button id="btn" type="submit" class="btn btn-outline btn-accent">
+					Berechne
+				</button>
+				<div class="flex flex-col gap-2">
+					<p id="invoiceWithTip"></p>
+					<p id="tip"></p>
+					<p id="personPrice"></p>
+				</div>
+			</div>
+		</main>
+		<footer></footer>
+	</body>
+</html>
