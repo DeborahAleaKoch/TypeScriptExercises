@@ -251,7 +251,7 @@ console.log("Conditionals-TS-Level-3_1 (switch)");
 
 const salesMonth: number = Number(Math.floor(Math.random() * 12));
 
-let salesMonthDate: string;
+let salesMonthDate: string | undefined;
 switch (salesMonth) {
 	case 1:
 		salesMonthDate = "1. Quartal";
@@ -296,7 +296,7 @@ switch (salesMonth) {
 const totalSales: number = Number(Math.floor(Math.random() * 9000) + 1000);
 // console.log(totalSales);
 
-let salesOutput: string;
+let salesOutput: string | undefined;
 switch (true) {
 	case totalSales >= 1000 && totalSales <= 2500:
 		salesOutput = "schlecht";
@@ -315,4 +315,6 @@ switch (true) {
 }
 
 // console.log("Im" + quartal + "war der Umsatz" + howWasIt);
-console.log(`Im ${salesMonthDate} war der Umsatz ${salesOutput}! `);
+if (salesMonthDate && salesOutput) {
+	console.log(`Im ${salesMonthDate} war der Umsatz ${salesOutput}! `);
+}
