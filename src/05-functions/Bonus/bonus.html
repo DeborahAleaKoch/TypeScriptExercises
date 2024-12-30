@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./bonus.css" />
+		<script type="module" src="./bonus.ts" defer></script>
+
+		<style>
+			#grayBox{
+				background: radial-gradient(circle, rgba(174,174,238,1) 0%, rgba(148,233,215,1) 100%);
+				border-radius: 10px;
+
+			}
+		</style>
+		<title>Bonus</title>
+	</head>
+	<body>
+		<header></header>
+		<main class="h-screen w-screen p-11 bg-slate-200 flex flex-col">
+			<div id="grayBox" class="flex flex-col bg-gray-400 p-10">
+				<div class="flex justify-between">
+					<section class="p-3 w-5/12">
+						<fieldset class="border-2 rounded border-indigo-400 p-3 m-6">
+							<legend class="text-indigo-400 inline-block text-2xl p-1">Home</legend>
+							<article class="" id="output1">
+								<p id="output-home"
+									class="text-yellow-400 bg-black p-20 rounded text-center text-8xl"
+								>
+									0
+								</p>
+							</article>
+						</fieldset>
+						<div class="flex justify-center gap-4">
+							<button id="btn-home-1" value="1" class="bg-indigo-400 rounded p-2">+1</button>
+							<button id="btn-home-2" value="2" class="bg-indigo-400 rounded p-2">+2</button>
+							<button id="btn-home-3" value="3" class="bg-indigo-400 rounded p-2">+3</button>
+						</div>
+					</section>
+					<section class="p-3 w-5/12">
+						<fieldset class="border-2 rounded border-pink-400 p-3 m-6">
+							<legend class="text-pink-400 inline-block text-2xl p-1 ">Away</legend>
+							<article class="" id="output2">
+								<p id="output-away"
+									class="text-yellow-400 bg-black p-20 rounded text-center text-8xl"
+								>
+									0
+								</p>
+							</article>
+						</fieldset>
+						<div class="flex justify-center gap-4">
+							<button id="btn-away-1" value="1" class="bg-pink-400 rounded p-2">+1</button>
+							<button id="btn-away-2" value="2" class="bg-pink-400 rounded p-2">+2</button>
+							<button id="btn-away-3" value="3" class="bg-pink-400 rounded p-2">+3</button>
+						</div>
+					</section>
+				</div>
+				<button id="reset" class="btn btn-outline w-40 m-auto">
+					Reset
+				</button>
+			</div>
+		</main>
+	</body>
+</html>

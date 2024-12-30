@@ -1,16 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <script type="module" src="./script.ts" defer></script>
-    <title>Taschenrechner</title>
-</head>
-<body>
-    <header></header>
-    <main>
-        
-    </main>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<script type="module" src="./script.ts" defer></script>
+
+        <style>
+            p{ font-size: 2rem;
+            margin: 1rem;
+            border: 2px solid deeppink;
+            border-radius: 50%;
+            width: 5rem;
+            height: 5rem;
+            padding: 1rem;
+            text-align: center;
+            background: #f3f4f6;
+
+        }
+
+        div{
+            display: flex;
+            justify-content: space-around;
+        }
+        section{
+            background: radial-gradient(circle, rgba(238,174,210,1) 0%, rgba(148,233,206,1) 100%);
+
+        }
+        </style>
+
+		<title>Taschenrechner</title>
+	</head>
+	<body>
+		<header>
+			<h1 class="text-center text-4xl text-emerald-400">Calculator</h1>
+		</header>
+		<main>
+			<section class="flex flex-col border-2 border-emerald-400 rounded-3xl m-5 p-5">
+				<h2 id="resultArea" 
+                class="h-20 text-3xl border-2 border-purple-600 rounded-2xl p-4 text-right  bg-gray-100"></h2>
+                <div class="">
+					<p id="" class="bg-pink-500"></p>
+                    <p id="" class="bg-pink-500"></p>
+					<p id="square">^2</p>
+					<p id="komma">.</p>
+				</div>
+				<div >
+					<p id="7">7</p>
+					<p id="8">8</p>
+					<p id="9">9</p>
+					<p id="+">+</p>
+				</div>
+				<div >
+					<p id="4">4</p>
+					<p id="5">5</p>
+					<p id="6">6</p>
+					<p id="-">-</p>
+				</div>
+				<div class="">
+					<p id="1">1</p>
+					<p id="2">2</p>
+					<p id="3">3</p>
+					<p id="*">*</p>
+				</div>
+				<div class="">
+					<p id="C">C</p>
+					<p id="0">0</p>
+					<p id="=">=</p>
+					<p id="/">/</p>
+				</div>
+                
+			</section>
+		</main>
+	</body>
 </html>
