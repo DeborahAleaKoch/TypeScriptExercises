@@ -6,28 +6,32 @@
 		<link rel="stylesheet" href="./style.css" />
 		<script type="module" src="./script.ts" defer></script>
 
-        <style>
-            p{ font-size: 2rem;
-            margin: .2rem;
-            border: 2px solid deeppink;
-            border-radius: 50%;
-            width: 10vh;
-            height: 10vh;
-            padding: 1vh;
-            text-align: center;
-            background: #f3f4f6;
+		<style>
+			button {
+				font-size: 2rem;
+				margin: 0.2rem;
+				border: 2px solid deeppink;
+				border-radius: 50%;
+				width: 10vh;
+				height: 10vh;
+				padding: 1vh;
+				text-align: center;
+				background: #f3f4f6;
+				
+			}
 
-        }
-
-        div{
-            display: flex;
-            justify-content: space-around;
-        }
-        section{
-            background: radial-gradient(circle, rgba(238,174,210,1) 0%, rgba(148,233,206,1) 100%);
-
-        }
-        </style>
+			div {
+				display: flex;
+				justify-content: space-around;
+			}
+			section {
+				background: radial-gradient(
+					circle,
+					rgba(238, 174, 210, 1) 0%,
+					rgba(148, 233, 206, 1) 100%
+				);
+			}
+		</style>
 
 		<title>Taschenrechner</title>
 	</head>
@@ -36,40 +40,43 @@
 			<h1 class="text-center text-4xl text-emerald-400">Calculator</h1>
 		</header>
 		<main>
-			<section class="flex flex-col border-2 border-emerald-400 rounded-3xl m-5 p-5">
-				<h2 id="resultArea" 
-                class="h-20 text-3xl border-2 border-purple-600 rounded-2xl p-4 text-right  bg-gray-100"></h2>
-                <div class="">
-					<p id="" class="bg-pink-500 text-transparent">1 </p>
-                    <p id="" class="bg-pink-500 text-transparent">1</p>
-					<p id="square">^2</p>
-					<p id="komma">.</p>
+			<section
+				class="flex flex-col border-2 border-emerald-400 rounded-3xl m-5 p-5"
+			>
+				<p
+					id="result-area"
+					class="h-20 text-3xl border-2 border-purple-600 rounded-2xl p-4 text-right bg-gray-100"
+				></p>
+				<div class="">
+					<button id="" class="bg-pink-500 text-transparent">1</button>
+					<button id="" class="bg-pink-500 text-transparent">1</button>
+					<button id="" class="bg-pink-500 text-transparent">1</button>
+					<button value="." id="komma">.</button>
 				</div>
-				<div >
-					<p id="7">7</p>
-					<p id="8">8</p>
-					<p id="9">9</p>
-					<p id="+">+</p>
+				<div>
+					<button value="7" id="number-7">7</button>
+					<button value="8" id="number-8">8</button>
+					<button value="9" id="number-9">9</button>
+					<button value="+" id="add">+</button>
 				</div>
-				<div >
-					<p id="4">4</p>
-					<p id="5">5</p>
-					<p id="6">6</p>
-					<p id="-">-</p>
+				<div>
+					<button value="4" id="number-4">4</button>
+					<button value="5" id="number-5">5</button>
+					<button value="6" id="number-6">6</button>
+					<button value="-" id="subtra">-</button>
 				</div>
 				<div class="">
-					<p id="1">1</p>
-					<p id="2">2</p>
-					<p id="3">3</p>
-					<p id="*">*</p>
+					<button value="1" id="number-1">1</button>
+					<button value="2" id="number-2">2</button>
+					<button value="3" id="number-3">3</button>
+					<button value="*" id="multi">*</button>
 				</div>
 				<div class="">
-					<p id="C">C</p>
-					<p id="0">0</p>
-					<p id="=">=</p>
-					<p id="/">/</p>
+					<button value="C" id="del">C</button>
+					<button value="0" id="number-0">0</button>
+					<button value="=" id="result">=</button>
+					<button value="/" id="division">/</button>
 				</div>
-                
 			</section>
 		</main>
 	</body>
