@@ -1,6 +1,6 @@
 # Taschenrechner
 
-<img src="./Taschenrechner.png">
+<img src="./taschenrechner.jpeg">
 
 ## Beschreibung
 
