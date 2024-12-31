@@ -50,9 +50,13 @@ if (awayBtn3 !== null) {
 	awayBtn3.onclick = () => awayScore(3);
 }
 
-function resetSorce() {
-	if (defaultHomeScore !== null) {
-	} else {
-		console.log("huppili, hier ist was schief gelaufen :/");
+function resetSorce(): void {
+	if (resultHome && resultAway) {
+		resultHome.innerHTML = `${(defaultHomeScore = 0)}`;
+		resultAway.innerHTML = `${(defaultAwayScore = 0)}`;
 	}
+}
+
+if (resetBtn !== null) {
+	resetBtn.onclick = resetSorce;
 }
