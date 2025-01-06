@@ -248,7 +248,7 @@ const singerSequence: Singer[] = singers.slice().sort((singerA, singerB) => {
 console.log(singerSequence);
 
 const singerStarts: Singer[] = singers.slice().sort((elementA, elementB) => {
-	return (elementA.period_active.start) - (elementB.period_active.start);
+	return elementA.period_active.start - elementB.period_active.start;
 });
 
 console.log(singerStarts);
