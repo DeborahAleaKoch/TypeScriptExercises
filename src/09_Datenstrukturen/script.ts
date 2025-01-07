@@ -10,9 +10,9 @@ const starWarsActors: StarWarsActor = [
 	["Princess Leia", "Carrie Fisher"],
 ];
 
-// starWarsActors.forEach((element) => {
-// 	console.log(`${element[1]} spielt ${element[0]}.`);
-// });
+starWarsActors.forEach((element) => {
+	console.log(`${element[1]} spielt ${element[0]}.`);
+});
 
 // & Tuple-TS-Level-2_1
 // andere Datei : employee.ts
@@ -25,9 +25,9 @@ const starWarsCharacters = new Set<string>([
 	"Obi Wan Kenobi",
 ]);
 
-// console.log(starWarsCharacters);
-// console.log(starWarsCharacters.add("Leia Organa"));
-// console.log(starWarsCharacters.add("Leia Organa"));
+console.log(starWarsCharacters);
+console.log(starWarsCharacters.add("Leia Organa"));
+console.log(starWarsCharacters.add("Leia Organa"));
 //Es wird nur ein Eintrag mit dem selben Inhalt gespeichert. es werden keine dopplungen auftreten.
 
 // & Set-TS-Level-2_1
@@ -45,7 +45,7 @@ marvelStars.push("Iron Man", "Thor"); // Es wird doppelt im Arrayaufgenommen
 // console.log(marvelStars);
 
 const marvelCharakters = new Set<string>(marvelStars); // die doppelten Einträge sind verschwunden.
-// console.log(marvelCharakters);
+console.log(marvelCharakters);
 
 // & Map-TS-Level-1_1
 // anderes file

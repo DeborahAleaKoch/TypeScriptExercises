@@ -33,12 +33,6 @@ mapFavoriteBands.set("Queen", ["Pi Pa Po", "Herr Ärmel", "Lukas", "Jim Knopf"])
 
 // & Map-TS-Level-3_1
 
-// for (const [band, [member]] of mapFavoriteBands) {
-// 	if (member.length >= 12) {
-// 		console.log(`Band: ${band}, Member: ${member}, Length: ${member.length}`);
-// 	}
-// }
-
 mapFavoriteBands.forEach((values, key) => {
 	const filteredValues = values.filter((element) => element.length >= 12);
 	filteredValues.forEach((member) => {
