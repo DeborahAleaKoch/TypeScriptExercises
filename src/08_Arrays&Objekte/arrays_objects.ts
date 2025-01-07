@@ -13,7 +13,7 @@ console.log(minNumber);
 const maxNumber: number = Math.max(...numberArray);
 console.log(maxNumber);
 
-// BESSER ALS BONUS in neuem file
+// BESSER in neuem file
 // Math-TS-Level-2_4
 // console.log('Math-TS-Level-2_4');
 
