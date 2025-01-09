@@ -70,38 +70,47 @@ do {
 function createImageNames() {
 	const returnArray: string[] = [];
 	for (let i = 1; i <= 100; i++) {
-		const newNumber = i.toString().padStart(3, "0");
-		const imageFileName = `image_${newNumber}.jpg`;
-		returnArray.push(imageFileName);
+		// const newNumber = i.toString().padStart(3, "0");
+		// const imageFileName = `image_${newNumber}.jpg`;
+		// returnArray.push(imageFileName);
 
-		// const newNumber = returnArray.push(i).toString().padStart(3, "0");
-		// console.log(`image_${newNumber.padStart(3, "0")}.jpg`);
+		returnArray.push(`image_${i.toString().padStart(3, "0")}.jpg`);
+		//console.log(`image_${newNumber.padStart(3, "0")}.jpg`);
 	}
 	console.log(returnArray);
 }
 
-// createImageNames();
+createImageNames();
 
 // ?Loops-TS-Level-2_2
-const inputNumber = Number(
-	document.querySelector<HTMLInputElement>("#input-number")
-);
-const inputButton = document.querySelector<HTMLInputElement>("#submit-button");
+const inputElement = document.querySelector<HTMLInputElement>("#input-number");
 
+const inputButton = document.querySelector<HTMLInputElement>("#submit-button");
 const outputOfLooopO =
 	document.querySelector<HTMLParagraphElement>("#loop-number");
 
-function getLoopOs() {
-	let loopOs: string = "";
-	for (let i = 1; i < inputNumber; i++) {
-		loopOs += "o";
-		if (outputOfLooopO !== null) {
-			outputOfLooopO.innerHTML = `<p>L${loopOs}p</p>`;
-		}
-		console.log(loopOs);
+// ding ist nur optional, wird nicht gebraucht.
+function getLoopOs(ding: MouseEvent) {
+	if (inputElement === null || outputOfLooopO === null) {
+		return;
 	}
+	console.log(ding);
+
+	const inputNumber = inputElement.valueAsNumber;
+
+	let loopOs: string = "";
+
+	for (let i = 1; i <= inputNumber; i++) {
+		loopOs = loopOs + "o";
+		// loopOs += "o"
+	}
+
+	outputOfLooopO.innerHTML = `<p>L${loopOs}p</p>`;
 }
 
+// event ist optional. kein muss. wird nicht benutzt.
 if (inputButton !== null) {
-	inputButton.onclick = () => getLoopOs();
+	// lange Schreibweise
+	//inputButton.onclick = (event: MouseEvent) => getLoopOs(event);
+	inputButton.onclick = getLoopOs;
 }

@@ -14,6 +14,7 @@ function gapAfter100signs(text: string) {
 		newIndexTextSign = newIndexTextSign + 100;
 		textInBlocksOfHundred.push(`${line} - ${i} of ${totalLines}`);
 	}
+
 	return textInBlocksOfHundred;
 }
 
