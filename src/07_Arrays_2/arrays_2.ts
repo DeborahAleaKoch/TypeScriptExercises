@@ -54,16 +54,16 @@ const string: string =
 	"Peter Piper picked a peck of pickled peppers. How many pickled peppers did Peter Piper pick?";
 
 const isItTrue: boolean = string.includes("Piper");
-console.log(isItTrue);
+console.log(isItTrue); //true
 const isItTrue1: boolean = string.includes("piper");
-console.log(isItTrue1);
+console.log(isItTrue1); //false
 const isItTrue4: boolean = string.toLowerCase().includes("piper");
-console.log(isItTrue4);
+console.log(isItTrue4); //true
 
 const isItTrue2: boolean = string.includes("peck");
-console.log(isItTrue2);
+console.log(isItTrue2); //true
 const isItTrue3: boolean = string.includes("peck", 33);
-console.log(isItTrue3);
+console.log(isItTrue3); //false
 
 console.log("__________________");
 // Array-TS-Level-3_1 (find, split, trim)

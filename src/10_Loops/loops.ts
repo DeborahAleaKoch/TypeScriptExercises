@@ -84,7 +84,6 @@ createImageNames();
 
 // ?Loops-TS-Level-2_2
 const inputElement = document.querySelector<HTMLInputElement>("#input-number");
-
 const inputButton = document.querySelector<HTMLInputElement>("#submit-button");
 const outputOfLooopO =
 	document.querySelector<HTMLParagraphElement>("#loop-number");
