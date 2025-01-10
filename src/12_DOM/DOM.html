@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./DOM.css" />
+		<script type="module" src="./DOM.ts" defer></script>
+
+		<style>
+			input {
+				border: 1px solid fuchsia;
+				border-radius: 5px;
+			}
+		</style>
+		<title>DOM</title>
+	</head>
+	<body>
+		<header>
+			<h1 class="text-4xl text-center text-fuchsia-700 p-2">DOM</h1>
+		</header>
+		<main class="p-3">
+			<h2>Aufgaben</h2>
+			<br />
+			<!-- ####DOM-TS_Level-1_4 -->
+			<section>
+				<h3>DOM-TS_Level-1_4</h3>
+				<div>
+					<input
+						type="text"
+						id="input-1-4"
+						placeholder="hier noch etwas"
+						class="border-2 border-fuchsia-600 rounded p-1"
+					/>
+					<button
+						id="add-button-level1-4"
+						class="border-2 border-fuchsia-600 bg-fuchsia-300 rounded p-1"
+					>
+						Text hinzufügen
+					</button>
+					<p id="output-level1-4"></p>
+				</div>
+				<br />
+				<!-- #### DOM-TS-Level-1_2 -->
+				<section>
+					<div>
+						<h3>DOM-TS-Level-1_2</h3>
+						<div id="info"></div>
+						<div id="container"></div>
+					</div>
+				</section>
+			</section>
+			<!-- #### DOM-TS-Level-1_3 -->
+			<section>
+				<h3>DOM-TS-Level-1_3</h3>
+				<section id="gallery"></section>
+			</section>
+			<br />
+			<!-- ####### Dom-Elements-TS-Level-1_1 -->
+			<section>
+				<h3>Dom-Elements-TS-Level-1_1</h3>
+				<div>
+					<h1>Meine Einkaufsliste</h1>
+
+					<input type="text" id="inputText" placeholder="Ich benötige..." />
+					<button id="shopping-button">Hinzufügen</button>
+
+					<ul id="myList">
+						<!-- Hier werden die dynamisch hinzugefügten Elemente erscheinen -->
+					</ul>
+				</div>
+			</section>
+			<br />
+			<!-- ####### Dom-Elements-TS-Level-1_2 -->
+			<section>
+				<h3>Dom-Elements-TS-Level-1_2</h3>
+				<div class="style">
+					<div class="example">Ein div mit class="example".</div>
+
+					<div class="example">Ein weiteres div mit class="example".</div>
+
+					<p class="example">Dies ist ein p-Element mit class="example"</p>
+
+					<p>
+						Dies ist ein <span class="example">span</span> Element mit
+						class="example" in einem anderen p-Element.
+					</p>
+
+					<p>
+						Klicken Sie auf die Button, um die Hintergrundfarbe aller Elemente
+						mit class="example" zu ändern.
+					</p>
+
+					<button class="example">Versuchen Sie es</button>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

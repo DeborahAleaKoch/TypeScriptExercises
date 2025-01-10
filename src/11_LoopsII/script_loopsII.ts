@@ -113,7 +113,6 @@ function getAddedModuloNumbers(): void {
 	}
 
 	sumOutput.innerHTML = `${sumNumbers}`;
-	// return sumNumbers;
 }
 
 if (button) {
@@ -121,3 +120,21 @@ if (button) {
 }
 
 // Loops-TS-Level-3_5
+
+function getfactorial(number: number): number {
+	let fact = 1;
+	for (let i = 0; i <= number; i++) {
+		if (number === 0 || number === 1) {
+			console.log(`factorial(${number}) = `, 1);
+			return 1;
+		}
+		let factorialCalc = i;
+		factorialCalc = number * (number - i);
+
+		console.log(factorialCalc);
+	}
+	return 0;
+}
+
+// getfactorial(1);
+getfactorial(2);
