@@ -75,7 +75,7 @@ if (shoppingInput && shoppingButton && shoppingListEntries) {
 const buttonClickChangeColor =
 	document.querySelector<HTMLButtonElement>("button.example");
 const colorChangeElements =
-	document.querySelectorAll<HTMLParagraphElement>(".example");
+	document.querySelectorAll<HTMLDivElement>(".example");
 
 if (buttonClickChangeColor && colorChangeElements) {
 	buttonClickChangeColor.addEventListener("click", function (event) {
@@ -84,4 +84,19 @@ if (buttonClickChangeColor && colorChangeElements) {
 			(element) => (element.style.backgroundColor = "pink")
 		);
 	});
+}
+
+// DOM-TS-Level-1_5
+const buttonToGetURL = document.querySelector<HTMLButtonElement>("#getURL");
+const outputURL = document.querySelector<HTMLDivElement>("#output-URL");
+// const outputElementOfURL = document.createElement("p");
+
+function showURL(): void {
+	if (outputURL) {
+		outputURL.innerHTML = `<p>${window.location}</p> `;
+	}
+}
+
+if (buttonToGetURL && outputURL) {
+	buttonToGetURL.addEventListener("click", showURL);
 }
