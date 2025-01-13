@@ -7,9 +7,9 @@ p {
 }
 
 :root {
-	--color1: #f6c89f;
-	--color2: #ffe7d1;
-	--color3: #4b8e8d;
+	--color1: #f6c89f; /* für den ersten p-Tag*/
+	--color2: #ffe7d1; /* für den zweiten p-Tag*/
+	--color3: #4b8e8d; /* für den dritten p-Tag*/
 	--color4: #396362;
 	--color5: #666;
 	--color6: #333;
