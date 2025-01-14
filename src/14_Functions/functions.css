@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+	font-size: 2rem;
+	text-align: center;
+}
+
+h2 {
+	font-size: larger;
+	color: darkorange;
+}
+
+div {
+	border: 1px solid gray;
+	border-radius: 50%;
+	width: 3.5rem;
+	height: 3.5rem;
+}
+body {
+	height: 100vh;
+}
+
+#first-ball {
+	background: linear-gradient(45deg, red 0 50%, darkorange 50% 100%);
+}
+
+#second-ball {
+	background: linear-gradient(45deg, limegreen 0 50%, yellow 50% 100%);
+}
+
+#third-ball {
+	background: linear-gradient(45deg, deeppink 0 50%, black 50% 100%);
+}
+
+#fourth-ball {
+	background: linear-gradient(45deg, lightblue 0 50%, purple 50% 100%);
+}
