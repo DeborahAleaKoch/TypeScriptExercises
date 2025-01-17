@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<link rel="stylesheet" href="./bonus.css" />
+		<script type="module" src="./bonus.ts" defer></script>
+		<title>Project-TS Galgenmännchen</title>
+	</head>
+	<body class="p-3">
+		<header>
+			<h1 class="text-4xl text-center p-1">Project-TS Galgenmännchen</h1>
+		</header>
+		<main>
+			<section
+				class="border-2 border-sky-800 rounded p-3 flex flex-col items-center gap-6"
+			>
+				<p
+					id="timer"
+					class="border-2 border-sky-600 p-2 rounded m-3 leading-5 text-center w-1/6"
+				>
+					1:12
+				</p>
+				<article id="alphabet" class="flex flex-wrap w-1/4 gap-2 p-1"></article>
+				<p id="word-output"></p>
+				<button class="btn btn-outline btn-primary w-44">Hit me again!</button>
+			</section>
+		</main>
+	</body>
+</html>
