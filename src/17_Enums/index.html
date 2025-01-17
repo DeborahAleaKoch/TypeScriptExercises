@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<script type="module" src="./aufgabe_1/script.ts" defer></script>
+		<script type="module" src="./aufgabe_1/days-months.ts" defer></script>
+		<script type="module" src="./aufgabe2/pizza.ts" defer></script>
+		<script type="module" src="./aufgabe3/aufgabe3.ts" defer></script>
+		<script type="module" src="./aufgabe4/aufgabe4.ts" defer></script>
+		<script type="module" src="./aufgabe5/aufgabe5.ts" defer></script>
+		<script type="module" src="./aufgabe5/app.ts" defer></script>
+		<title>Enums</title>
+	</head>
+	<body>
+		<header>
+			<h1 class="text-4xl text-rose-600 text-center">Enums</h1>
+		</header>
+		<main class="p-3">
+			<h2>Aufgaben:</h2>
+			<p>Enum-TS-Level-1_1</p>
+			<p>Enum-TS-Level-1_2</p>
+			<p>Enum-TS-Level-2_1</p>
+
+			<section class="border-2 border-rose-400 rounded p-2 my-3">
+				<h3>Enum-TS-Level-2_2</h3>
+				<p>
+					Du sollst eine Farbauswahl mit Hilfe von Buttons in einem Online-Shop
+					erstellen.
+				</p>
+				<p>
+					Definiere ein Enum ClothingColor mit dem Farbnamen und der
+					Entsprechung in Hex-Werten.
+				</p>
+				<p>Es gibt diese Farben: Gelb, Orange, Pink, Blau, Lila, und Grau.</p>
+				<p>
+					Suche dir im Internet passende Farbwerte (Hex-Werte) für Gelb, Orange,
+					Pink, Blau, Lila und Grau (z. B. Gelb = #FFFF00).
+				</p>
+				<p>
+					Lege dir ein Array mit allen Farben an: allColors: ClothingColor[]
+				</p>
+				<p>
+					Gehe in einer Schleife das Array durch und erstelle Buttons mit der
+					jeweiligen Farbe als Hintergrundfarbe .
+				</p>
+				<div id="button-div-parent"></div>
+			</section>
+
+			<section class="border-rose-400 border-2 rounded p-2 my-4">
+				<h3>Enum-TS-Level-3_2</h3>
+				<p>
+					Erstelle ein Enum Permissions für die Verwaltung von Zugriffsrechten
+					None = 0, Read = 1, Write = 2, Execute = 4,
+				</p>
+				<p>
+					Hat ein User eine höhere Berechtigung, schließt das die
+					darunterliegenden mit ein (Berechtigung Execute schließt das Read und
+					Write mit ein…)
+				</p>
+				<p>Lege eine Datei app.ts an</p>
+				<p>
+					Schreibe dort eine Funktion, die als Parameter einen Enum-Wert für
+					Permissions übergeben bekommt und auf der Konsole ausgibt, welche
+					Berechtigungen eingeschlossen sind
+				</p>
+				<p>Rufe die Funktion mit allen möglichen Werten für das Enum auf</p>
+				<p>Erweitere das Enum um den Wert Delete = 8</p>
+				<p>Läuft dein Code direkt ohne weitere Anpassung?</p>
+                <div id="output"></div>
+			</section>
+		</main>
+	</body>
+</html>
