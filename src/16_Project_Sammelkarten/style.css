@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	input {
+		@apply border-2 border-orange-400 rounded text-gray-400 flex flex-grow w-2/5 p-1;
+	}
+}

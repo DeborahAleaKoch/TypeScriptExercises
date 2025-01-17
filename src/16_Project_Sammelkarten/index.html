@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<script type="module" src="./project.ts" defer></script>
+		<title>Project-TS Panini Sammlerkarten</title>
+	</head>
+	<body>
+		<header class="py-3">
+			<h1 class="text-4xl text-orange-500 text-center">
+				Project-TS Panini Sammlerkarten
+			</h1>
+		</header>
+		<main class="m-4">
+			<h2 class="text-3xl text-orange-400">Add a Card</h2>
+			<section id="output-cards"></section>
+			<form action="" class="flex flex-wrap gap-1">
+				<input
+					type="text"
+					name="firstname"
+					id="firstname"
+					placeholder="Vorname"
+				/>
+				<input
+					type="text"
+					name="lastname"
+					id="lastname"
+					placeholder="Nachname"
+				/>
+				<input type="date" id="birthdate" placeholder="Geburtstag" />
+				<input
+					type="text"
+					name="geschlecht"
+					id="geschlecht"
+					placeholder="Geschlecht"
+				/>
+				<input
+					type="number"
+					name="nummer"
+					id="tricot-number"
+					placeholder="Tricot Number"
+				/>
+				<input
+					type="text"
+					name="position"
+					id="position"
+					placeholder="Position"
+				/>
+				<input type="text" name="schule" id="school" placeholder="Schule" />
+				<input type="url" name="img-url" id="img-url" placeholder="hier URL" />
+				<input
+					id="add-button"
+					type="button"
+					value="add"
+					class="bg-orange-300 text hover:bg-orange-400 text-gray-900"
+				/>
+			</form>
+		</main>
+	</body>
+</html>
