@@ -12,7 +12,8 @@ if (count && divTextElement) {
 		}
 		count.textContent = countDown.toString();
 		if (countDown === 0) {
-			divTextElement.remove(".message");
+            divTextElement.style.opacity = '0'
+			// divTextElement.remove();
 		}
 	}, 1000);
 }
