@@ -2,8 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "unbounded";
+	src: url(./assets/fonts/Unbounded/Unbounded-VariableFont_wght.ttf);
+}
+
 @layer components {
 	input {
 		@apply border-2 border-orange-400 rounded text-gray-400 flex flex-grow w-2/5 p-1;
+	}
+	p {
+		@apply font-[unbounded] text-gray-800 bg-orange-300 opacity-50 text-sm;
 	}
 }

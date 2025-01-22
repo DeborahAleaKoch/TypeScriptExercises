@@ -49,7 +49,7 @@ function renderMovies(movies: Movie[]) {
 		newDivElement.style.backgroundColor = "#fef08a";
 		newDivElement.style.padding = "1rem";
 		newDivElement.style.margin = "5px";
-		newDivElement.style.width = "24%";
+		newDivElement.style.width = "";
 		// Füllen des divs mit den keys
 		newDivElement.innerHTML = `
                         <h1>Title:${movie.title}</h1>
@@ -70,8 +70,8 @@ if (searchButton && inputSearch) {
 		const inputValue = inputSearch.value;
 
 		const filteredMovies = movieObjects.filter((element) => {
-			// const fullText = JSON.stringify(element); 
-            // JSON.stringify() ist eine Funktion, die Objekte zu strings macht
+			// const fullText = JSON.stringify(element);
+			// JSON.stringify() ist eine Funktion, die Objekte zu strings macht
 			return (
 				element.title.toLowerCase().includes(inputValue.toLowerCase()) ||
 				element.genre.join().toLowerCase().includes(inputValue.toLowerCase()) || //join(), verbindet Arrays zu einem string
@@ -84,5 +84,11 @@ if (searchButton && inputSearch) {
 		console.log(filteredMovies);
 
 		renderMovies(filteredMovies);
+	});
+}
+
+if (yearUpButton) {
+	yearUpButton.addEventListener("click", (movie) => {
+		movieObjects.sort();
 	});
 }

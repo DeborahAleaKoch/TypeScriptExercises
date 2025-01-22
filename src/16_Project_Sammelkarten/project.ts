@@ -6,7 +6,7 @@ const inputBirthDate = document.querySelector<HTMLInputElement>("#birthdate");
 const inputGender = document.querySelector<HTMLInputElement>("#geschlecht");
 const inputTricot = document.querySelector<HTMLInputElement>("#tricot-number");
 const inputPosition = document.querySelector<HTMLInputElement>("#position");
-const inputSchool = document.querySelector<HTMLInputElement>("#school");
+const inputLike = document.querySelector<HTMLInputElement>("#school");
 const inputUrl = document.querySelector<HTMLInputElement>("#img-url");
 const button = document.querySelector<HTMLButtonElement>("#add-button");
 
@@ -20,7 +20,7 @@ type Character = {
 	gender: string;
 	tricotNumber: number;
 	position: string;
-	school: string;
+	like: string;
 	img: string;
 };
 
@@ -33,7 +33,7 @@ function getValuesFromInput(): void {
 			inputBirthDate &&
 			inputGender &&
 			inputPosition &&
-			inputSchool &&
+			inputLike &&
 			inputTricot &&
 			inputUrl &&
 			outputSection
@@ -46,7 +46,7 @@ function getValuesFromInput(): void {
 	const birthDateValue = inputBirthDate.value;
 	const genderValue = inputGender.value;
 	const tricotValue = Number(inputTricot.value);
-	const schoolValue = inputSchool.value;
+	const likeValue = inputLike.value;
 	const positionValue = inputPosition.value;
 	const urlValue = inputUrl.value;
 
@@ -57,15 +57,26 @@ function getValuesFromInput(): void {
 		gender: genderValue,
 		tricotNumber: tricotValue,
 		position: positionValue,
-		school: schoolValue,
+		like: likeValue,
 		img: urlValue,
 	};
 	console.log(character);
 
 	const newDivElement = document.createElement("div");
 
+	// newDivElement.innerHTML += `<p>${firstNameValue}</p> <p>${lastNameValue}</p>`;
+	newDivElement.style.backgroundImage = `url(${urlValue})`;
+	newDivElement.className = `bg-cover w- h-80 bg-no-repeat p-1`;
+	newDivElement.innerHTML =
+		// <img class='border-2 border-gray-500 h-60 w-32 href='${urlValue}'>
+		`<p>${firstNameValue}  ${lastNameValue}</p>`;
 	outputSection.appendChild(newDivElement);
-	newDivElement.textContent = `${character}`;
+
+	// const newImgElement = document.createElement('img')
+	// // newDivElement.appendChild(newImgElement)
+	// newImgElement.className = 'w-1/2 h-3/4'
+	// newImgElement.style.backgroundImage = urlValue;
+	console.log("nach html ausgabe");
 }
 
 // eventlistener auf den butten anwenden
