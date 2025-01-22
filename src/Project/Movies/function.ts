@@ -52,12 +52,12 @@ function renderMovies(movies: Movie[]) {
 		newDivElement.style.width = "";
 		// Füllen des divs mit den keys
 		newDivElement.innerHTML = `
-                        <h1>Title:${movie.title}</h1>
-                        <p>Year:${movie.year}</p>
-                        <p>Regisseur:${movie.regisseur}</p>
-                        <p>Duration:${movie.duration}</p>
-                        <p>Genre:${movie.genre}</p>
-                        <p>Score:${movie.score}</p>`;
+                        <h1>Title: ${movie.title}</h1>
+                        <p>Year: ${movie.year}</p>
+                        <p>Regisseur: ${movie.regisseur}</p>
+                        <p>Duration: ${movie.duration}</p>
+                        <p>Genre: ${movie.genre}</p>
+                        <p>Score: ${movie.score}</p>`;
 		//
 		if (movieOutputAera) movieOutputAera.appendChild(newDivElement);
 	});
@@ -88,7 +88,51 @@ if (searchButton && inputSearch) {
 }
 
 if (yearUpButton) {
-	yearUpButton.addEventListener("click", (movie) => {
-		movieObjects.sort();
+	yearUpButton.addEventListener("click", () => {
+		// const yearOfMovies = movieObjects.map((entry) => {
+		// 	return console.log(entry.year);
+		// });
+
+		const movieYearsToNumbers = movieObjects.map((entry) => {
+			return Number(entry.year);
+		});
+		console.log(movieYearsToNumbers);
+
+		const sortedMovies = movieYearsToNumbers.sort((a, b) => {
+			// console.log(a - b);
+			return a - b;
+		});
+		console.log(sortedMovies);
+	});
+}
+
+if (yeardownButton) {
+	yeardownButton.addEventListener("click", () => {
+		// const yearOfMovies = movieObjects.map((entry) => {
+		// 	return console.log(entry.year);
+		// });
+
+		const movieYearsToNumbers = movieObjects.map((entry) => {
+			return Number(entry.year);
+		});
+		console.log(movieYearsToNumbers);
+
+		const sortedMovies = movieYearsToNumbers.sort((a, b) => {
+			// console.log(a - b);
+			return b - a;
+		});
+		console.log(sortedMovies);
+	});
+}
+
+if (rateButton) {
+	rateButton.addEventListener("click", () => {
+		const scoreToNumber = movieObjects.map((entry) => {
+			return Number(entry.score);
+		});
+		const sortedScore = scoreToNumber.sort((a, b) => {
+			return b - a;
+		});
+		console.log(sortedScore);
 	});
 }
