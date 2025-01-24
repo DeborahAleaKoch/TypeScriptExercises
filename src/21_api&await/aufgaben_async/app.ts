@@ -35,7 +35,7 @@ async function main2() {
 	console.log("Can you hear me...");
 }
 
-// main2();
+main2();
 
 // Ausgabe in der Console:
 
