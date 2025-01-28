@@ -36,14 +36,14 @@ const outputSection = document.querySelector("#output");
 // 	.catch((error) => {
 // 		console.warn(error);
 // 	});
-
+//Erstellen des einzelnen Charackters im html
 function renderCharacterEntry(entry: Character[]) {
 	if (outputSection) {
 		// vorheriges Ergebnis aufräumen
 		outputSection.innerHTML = "";
 		entry.forEach((element) => {
-			outputSection.innerHTML += `<div class='shadow-md'>
-			<img src="${element.image}" alt="bild von character class=''" />
+			outputSection.innerHTML += `<div class='shadow-md  '>
+			<img src="${element.image}" alt="bild von character" class='' />
 			<div class="grid-cols-1 gap-3">
 				<p class="">Name: ${element.name}</p>
 				<p class="">Species: ${element.species}</p>
