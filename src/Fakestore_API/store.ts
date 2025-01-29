@@ -35,17 +35,26 @@ function renderProducts(products: Product[]) {
 			const newImageElement = document.createElement("img");
 			newImageElement.className = "w-full h-48 object-contain my-4";
 			newImageElement.src = product.image;
+			newImageElement.title = `${product.title}`;
 			newDivElement.appendChild(newImageElement);
 
 			const newFigcaptionElement = document.createElement("figcaption");
 			newFigcaptionElement.className = "px-2 mt-4";
-			newFigcaptionElement.textContent = product.title;
+
+			if (product.title.length >= 50) {
+				const productTitleShorted = product.title.slice(0, 45);
+				console.log(productTitleShorted);
+				newFigcaptionElement.textContent = `${productTitleShorted}...`;
+			} else {
+				newFigcaptionElement.textContent = `${product.title}`;
+			}
+			newFigcaptionElement.title = `${product.title}`;
 			newDivElement.appendChild(newFigcaptionElement);
 
 			const newDivPriceElement = document.createElement("div");
 
 			newDivPriceElement.className =
-				"font-bold flex justify-between p-2 border-t-2 h-16";
+				"font-bold flex justify-between item-center py-4 px-2 border-t-2 ";
 			const newParagraphElement = document.createElement("p");
 			newParagraphElement.textContent = `$ ${product.price.toFixed(2)}`;
 			newDivPriceElement.appendChild(newParagraphElement);
