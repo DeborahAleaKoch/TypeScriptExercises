@@ -26,7 +26,7 @@ function makeMovieObjects(
 }
 // console.log(makeMovieObjects(movies));
 
-const movieObjects = makeMovieObjects(movies);
+let movieObjects = makeMovieObjects(movies);
 // console.log(movieObjects[3].title);
 
 const inputSearch = document.querySelector<HTMLInputElement>("#input");
@@ -69,7 +69,7 @@ if (searchButton && inputSearch) {
 	searchButton.addEventListener("click", () => {
 		const inputValue = inputSearch.value;
 
-		const filteredMovies = movieObjects.filter((element) => {
+		movieObjects = movieObjects.filter((element) => {
 			// const fullText = JSON.stringify(element);
 			// JSON.stringify() ist eine Funktion, die Objekte zu strings macht
 			return (
@@ -81,9 +81,9 @@ if (searchButton && inputSearch) {
 				element.year.toLowerCase().includes(inputValue.toLowerCase())
 			);
 		});
-		console.log(filteredMovies);
+		console.log(movieObjects);
 
-		renderMovies(filteredMovies);
+		renderMovies(movieObjects);
 	});
 }
 
@@ -93,46 +93,42 @@ if (yearUpButton) {
 		// 	return console.log(entry.year);
 		// });
 
-		const movieYearsToNumbers = movieObjects.map((entry) => {
-			return Number(entry.year);
+		movieObjects.sort((a, b) => {
+			if (a.year > b.year) {
+				return 1;
+			}
+			if (a.year < b.year) {
+				return -1;
+			} else return 0;
 		});
-		console.log(movieYearsToNumbers);
-
-		const sortedMovies = movieYearsToNumbers.sort((a, b) => {
-			// console.log(a - b);
-			return a - b;
-		});
-		console.log(sortedMovies);
+		renderMovies(movieObjects);
 	});
 }
 
 if (yeardownButton) {
 	yeardownButton.addEventListener("click", () => {
-		// const yearOfMovies = movieObjects.map((entry) => {
-		// 	return console.log(entry.year);
-		// });
-
-		const movieYearsToNumbers = movieObjects.map((entry) => {
-			return Number(entry.year);
+		movieObjects.sort((a, b) => {
+			if (a.year > b.year) {
+				return -1;
+			}
+			if (a.year < b.year) {
+				return 1;
+			} else return 0;
 		});
-		console.log(movieYearsToNumbers);
-
-		const sortedMovies = movieYearsToNumbers.sort((a, b) => {
-			// console.log(a - b);
-			return b - a;
-		});
-		console.log(sortedMovies);
+		renderMovies(movieObjects);
 	});
 }
 
 if (rateButton) {
 	rateButton.addEventListener("click", () => {
-		const scoreToNumber = movieObjects.map((entry) => {
-			return Number(entry.score);
+		movieObjects.sort((a, b) => {
+			if (a.score > b.score) {
+				return -1;
+			}
+			if (a.score < b.score) {
+				return 1;
+			} else return 0;
 		});
-		const sortedScore = scoreToNumber.sort((a, b) => {
-			return b - a;
-		});
-		console.log(sortedScore);
+		renderMovies(movieObjects);
 	});
 }

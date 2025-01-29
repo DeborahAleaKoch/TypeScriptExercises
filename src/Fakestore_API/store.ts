@@ -2,48 +2,128 @@ import ky from "ky";
 import { Product } from "./ProductTypes";
 
 const outputSection = document.querySelector<HTMLDivElement>("#output-section");
+const sortingSelector =
+	document.querySelector<HTMLSelectElement>("#select-menu");
 
 //mit ky
-async function getProduct() {
+async function getProducts() {
 	const productDetails = await ky
 		.get<Product[]>("https://fakestoreapi.com/products")
 		.json();
 	console.log(productDetails);
-	renderProductEntry(productDetails);
 	return productDetails;
 }
 
-getProduct();
+const products = await getProducts();
+renderProducts(products);
 
-function renderProductEntry(entry: Product[]) {
+function renderProducts(products: Product[]) {
 	if (outputSection) {
-		entry.forEach((element) => {
+		outputSection.innerHTML = "";
+
+		if (products.length === 0) {
+			outputSection.textContent = "Hupsi";
+			return;
+		}
+
+		products.forEach((product) => {
 			//neuen Div Container erstellen, in dem alle anderen DOM Elemente hineinkommen:
 			const newDivElement = document.createElement("div");
-			newDivElement.className = " border-2 border-orange-400 rounded-md  my-2";
-			newDivElement.innerHTML = "";
+			newDivElement.className = "px-2 border-2 shadow-md rounded-md   ";
 
 			//ein element schaffen für die Darstellung von Bild und titel:
 			const newImageElement = document.createElement("img");
-			newImageElement.className = "w-full h-48 object-contain";
-			newImageElement.src = element.image;
+			newImageElement.className = "w-full h-48 object-contain my-4";
+			newImageElement.src = product.image;
 			newDivElement.appendChild(newImageElement);
 
 			const newFigcaptionElement = document.createElement("figcaption");
-			newFigcaptionElement.className = " ";
-			newFigcaptionElement.textContent = element.title;
+			newFigcaptionElement.className = "px-2 mt-4";
+			newFigcaptionElement.textContent = product.title;
 			newDivElement.appendChild(newFigcaptionElement);
 
 			const newDivPriceElement = document.createElement("div");
-			newDivPriceElement.className = "font-bold flex flex-2 bg-amber-200 h-12";
-			newDivPriceElement.textContent = `$ ${element.price.toFixed(2)}`;
+
+			newDivPriceElement.className =
+				"font-bold flex justify-between p-2 border-t-2 h-16";
+			const newParagraphElement = document.createElement("p");
+			newParagraphElement.textContent = `$ ${product.price.toFixed(2)}`;
+			newDivPriceElement.appendChild(newParagraphElement);
+
+			const newButtonElement = document.createElement("button");
+			newButtonElement.textContent = "Add to Card";
+			newButtonElement.className = "border-2 border-pink-400 px-2 rounded";
 			newDivElement.appendChild(newDivPriceElement);
+			newDivPriceElement.appendChild(newButtonElement);
 			outputSection.appendChild(newDivElement);
 		});
 	}
 }
 
-const electroButton = document.querySelector("#electro");
-if (electroButton && outputSection) {
-	electroButton.addEventListener("click", () => {});
+const categoryButtons = [
+	{ buttonId: "#electronics", categoryName: "electronics" },
+	{ buttonId: "#jewelery", categoryName: "jewelery" },
+	{ buttonId: "#men", categoryName: "men's clothing" },
+	{ buttonId: "#women", categoryName: "women's clothing" },
+];
+
+if (outputSection) {
+	categoryButtons.forEach((categoryButton) => {
+		const buttonElement = document.querySelector(categoryButton.buttonId);
+		if (buttonElement) {
+			buttonElement.addEventListener("click", () => {
+				const filteredProducts = products.filter(
+					(product) => product.category === categoryButton.categoryName
+				);
+				sortProducts(filteredProducts);
+
+				renderProducts(filteredProducts);
+			});
+		}
+	});
+}
+
+function sortProducts(products: Product[]): void {
+	if (sortingSelector) {
+		const sortingValue = sortingSelector.value;
+
+		if (sortingValue === "price-up") {
+			products.sort((a, b) => {
+				if (a.price > b.price) {
+					return 1;
+				}
+				if (a.price < b.price) {
+					return -1;
+				} else return 0;
+			});
+		}
+		if (sortingValue === "price-down") {
+			products.sort((a, b) => {
+				if (a.price > b.price) {
+					return -1;
+				}
+				if (a.price < b.price) {
+					return 1;
+				} else return 0;
+			});
+		}
+	}
+}
+
+const inputElement = document.querySelector<HTMLInputElement>("#search-input");
+console.log(inputElement);
+
+if (inputElement) {
+	inputElement.addEventListener("change", (event) => {
+		event.preventDefault();
+		const inputValue = inputElement.value;
+		const filteredProductsByInput = products.filter((product) => {
+			return (
+				product.title.toLowerCase().includes(inputValue.toLowerCase()) ||
+				product.description.toLowerCase().includes(inputValue.toLowerCase())
+			);
+		});
+
+		renderProducts(filteredProductsByInput);
+	});
 }
