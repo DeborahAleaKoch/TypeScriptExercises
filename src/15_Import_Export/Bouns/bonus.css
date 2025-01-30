@@ -5,8 +5,8 @@
 button {
 	border: 1px solid pink;
 	border-radius: 10px;
-	width: 30px;
-	height: 30px;
+	width: 60px;
+	height: 40px;
 	color: pink;
 	background-color: indigo;
 }

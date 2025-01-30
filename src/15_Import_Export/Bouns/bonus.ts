@@ -23,6 +23,7 @@ if (wordOutput) {
 		const wordLength = entry.length;
 		console.log(wordLength);
 		const newPElement = document.createElement("p");
+		newPElement.textContent = ``;
 		wordOutput.appendChild(newPElement);
 	});
 }
