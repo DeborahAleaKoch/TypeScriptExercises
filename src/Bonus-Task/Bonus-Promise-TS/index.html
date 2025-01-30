@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<script type="module" src="./app.ts"></script>
+		<script type="module" src="./forecast.ts"></script>
+		<title>Bonus - Promise</title>
+	</head>
+	<body>
+		<h1 class="text-4xl">Promise-TS-Level-1_2</h1>
+		<div class="text-lg m-3">
+			<p>Lege eine Datei weather-type.ts an</p>
+			<p>
+				Erstelle dort ein Enum WeatherType mit den Werten none = 0, sunny = 1,
+				cloudy = 2, rainy = 3, snowy = 4, stormy = 5, windy = 6
+			</p>
+			<p>Lege eine forecast.ts an</p>
+			<p>Erstelle ein Promise vom Typ WeatherType</p>
+			<p>
+				Lass dir mit Math.random einen zufälligen Wert zwischen 0 und 9
+				generieren
+			</p>
+			<p>
+				Ist der Wert zwischen 0 und 6, gib mit resolve den zugeordneten
+				Enum-Wert zurück
+			</p>
+			<p>
+				Ist der Wert > 6, rejecte das Promise mit einem Fehlertext “Weather
+				forecast could not be determined”
+			</p>
+			<p>Hänge dich an das Promise</p>
+			<p>Gib im then-Block das Ergebnis auf der Konsole aus</p>
+			<p>Gib im catch-Block den Fehler auf der Konsole aus</p>
+		</div>
+	</body>
+</html>
