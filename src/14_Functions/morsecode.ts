@@ -38,8 +38,6 @@ const morseAlphabet = [
 	{ letter: "Z", morseCode: "--.." },
 ];
 
-const z = morseAlphabet.find((entry) => entry.letter === "z")?.morseCode;
-
 const inputElement = document.querySelector<HTMLInputElement>("#text-input");
 const button = document.querySelector<HTMLButtonElement>("button");
 const outputElement =
@@ -54,27 +52,35 @@ function encryptLetter(input: string): string {
 	}
 	return input;
 }
-
-// console.log(encryptLetter("Hallo"));
-
+//encrypt mit einem for loop
 function encryptText(text: string): string {
 	let encrypted: string = "";
 	for (let i = 0; i < text.length; i++) {
 		encrypted += encryptLetter(text[i]);
 	}
-
 	return encrypted;
 }
-
+//encrypt mit .map
 function encryptWithMap(text: string): string {
 	const encrypted = [...text].map((character) => encryptLetter(character));
-
 	return encrypted.join("");
 }
-const text = "Hallo Debo, Feierabend";
 
-console.log({
-	"with map": encryptWithMap(text),
-	"with for": encryptText(text),
-	equal: encryptText(text) === encryptWithMap(text),
-});
+//Für Tests
+// const text = "Hallo Debo, Feierabend";
+
+// console.log({
+// 	"with map": encryptWithMap(text),
+// 	"with for": encryptText(text),
+// 	equal: encryptText(text) === encryptWithMap(text),
+// });
+
+//hier wird der Button, die Eingabe und die Ausgabe verarbeitet.
+//durch den button click wird der text aus dem eingabe feld unten in morsecode ausgegeben.
+if (button && inputElement && outputElement) {
+	button.addEventListener("click", (event) => {
+		event.preventDefault();
+		const inputValue = inputElement.value;
+		outputElement.textContent = encryptWithMap(inputValue);
+	});
+}
