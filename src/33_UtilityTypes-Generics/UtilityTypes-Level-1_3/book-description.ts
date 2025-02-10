@@ -5,7 +5,7 @@ import { Book } from "../UtilityTypes-Level-1_1/book";
 //Lege eine neue Datei book-description.ts an
 //Erstelle dort einen neuen Type BookDescription basierend auf IBook
 
-type BookDescription = Omit<
+export type BookDescription = Omit<
 	Book,
 	"author" | "numberOfPages" | "publishingYear"
 >;
