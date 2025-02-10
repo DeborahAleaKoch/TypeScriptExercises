@@ -12,5 +12,5 @@ if (
 	stopButton &&
 	restartButton
 ) {
-    
+	const inputValue = inputTimeNumber.value;
 }

@@ -13,7 +13,6 @@ async function getProducts() {
 	console.log(productDetails);
 	return productDetails;
 }
-
 const products = await getProducts();
 renderProducts(products);
 
